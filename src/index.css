@@ -17,8 +17,9 @@ code {
 } 
 
 .menu {
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 10px !important; 
 }
 
 .menu .item {
@@ -27,4 +28,27 @@ code {
 .menu .item.active {
   border-color: #1A3C7E !important;
   border-width: 3px !important;
+}
+
+.mainTitleText {
+  font-size: 32px;
+}
+
+.mainTitleText .title {
+  font-weight: bold;
+
+}
+
+.mainText{
+  font-size: 22px;
+  text-align: left;
+}
+
+.mainTextButton{
+  background-color: #1A3C7E !important;
+  color:white !important;
+  float: left;
+  border-radius: 10px !important;
+  font-size: 18px !important;
+
 }
