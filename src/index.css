@@ -99,10 +99,15 @@ tr:hover{
   width: 8% !important;
   text-align: center;
 }
+
 .detailButton{
   background-color: #1A3C7E !important;
   color:white !important;
   float: right;
   font-size: 14px !important;
 
+}
+.field label{
+  font-size: 12px !important;
+  color:#9EA0A5 !important;
 }
