@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+
 }
 
 code {
@@ -12,14 +14,27 @@ code {
     monospace;
 }
 
+tr:hover{
+  background: #FAFAFB !important;
+}
+
 .container{
   width: 80% !important;
 } 
 
 .menu {
-  padding-left: 5%;
-  padding-right: 5%;
-  margin-top: 10px !important; 
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #fff !important;
+ 
+}
+
+.headerMenu{
+  position: absolute;
+
+  width: 100%;
+  
+  z-index: 10;
 }
 
 .menu .item {
@@ -50,5 +65,18 @@ code {
   float: left;
   border-radius: 10px !important;
   font-size: 18px !important;
+
+}
+.fullGray{
+  background-color:#F5F6FA;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  width: 100%;
+  z-index: 1;
+  padding-top:5%; 
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%;
 
 }

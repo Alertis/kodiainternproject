@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button,  Grid, Container} from 'semantic-ui-react';
-import HeaderComp from '../component/Header'
 
 
 class Main extends Component {
@@ -8,7 +7,6 @@ class Main extends Component {
     render() {
         return(
             <Container >
-               <HeaderComp />
                 <Grid columns={2}>
                     <Grid.Column verticalAlign="middle">
                         <p className="mainTitleText"><span className="title">Güvenliğinizi</span> Yeniden Tanımlayın!</p>
@@ -17,11 +15,7 @@ class Main extends Component {
                     </Grid.Column>
                     <Grid.Column><img src='Assets/software.png'/></Grid.Column>
                 </Grid>
-            </Container>
-               
-           
-
-            
+            </Container>          
         );
     }
 } 
