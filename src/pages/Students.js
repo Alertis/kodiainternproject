@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table,  Grid, Container} from 'semantic-ui-react';
+import { Table,  Modal, Container} from 'semantic-ui-react';
 
 
 class Students extends Component {
@@ -54,6 +54,18 @@ class Students extends Component {
                         </Table.Row>
                     </Table.Body>
                 </Table>
+                <Modal size="mini" open={true}>
+                    <Modal.Header>Muhammed Dilmaç</Modal.Header>
+                    <Modal.Content>
+                       <span>ID: </span> 1 <br />
+                       <span>Üniversite Adı: </span> Karabük Üniversitesi <br />
+                       <span>Başlangıç Tarihi: </span> 2012-01-01 <br />
+                       <span>Kuruluş Tarihi: </span> 2000-01-01 <br />
+                       <span>Türü: </span> Devlet <br />
+
+                    </Modal.Content>
+                    
+                </Modal>
             </div>        
         );
     }

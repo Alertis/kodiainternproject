@@ -111,3 +111,6 @@ tr:hover{
   font-size: 12px !important;
   color:#9EA0A5 !important;
 }
+.content span{
+  font-weight: bold;
+}

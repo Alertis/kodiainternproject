@@ -18,30 +18,30 @@ class Students extends Component {
                 </div> 
                  <Grid className="Detail" padded style={{backgroundColor:'white',marginTop:'20%'}}>
                     <Grid.Row className="DetailTitle" style={{width:'auto'}}> 
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             ID
                         </Grid.Column>
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             Kuruluş Tarihi
                         </Grid.Column>
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             Türü
                         </Grid.Column>
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             Web Sitesi
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             1
                         </Grid.Column>
-                        <Grid.Column className="DetailTitleColumn"  >
+                        <Grid.Column   >
                             2000-01-01
                         </Grid.Column>
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             Devlet
                         </Grid.Column>
-                        <Grid.Column className="DetailTitleColumn" >
+                        <Grid.Column  >
                             <a>Ziyaret Et <Icon name="arrow right" /></a>
                         </Grid.Column>
                     </Grid.Row>
