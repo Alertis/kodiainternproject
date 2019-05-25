@@ -8,7 +8,7 @@ class Students extends Component {
         return(
             
             <div className="fullGray">
-                 <h2>Öğrenci Listesi</h2>
+                 <span className="title">Öğrenci Listesi</span>
                  <Table basic celled style={{backgroundColor:'white', textAlign:'center'}} >
                     <Table.Header >
                         <Table.HeaderCell style={{width:'5%'}}>ID</Table.HeaderCell>

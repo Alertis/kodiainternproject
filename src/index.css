@@ -80,3 +80,29 @@ tr:hover{
   padding-right: 10%;
 
 }
+.title{
+  font-size: 24px;
+  margin-right: 1%; 
+}
+
+.titleBox{
+  margin-bottom:2%;
+}
+
+.DetailTitle{
+  font-size: 12px;
+  color: gray;
+  height:1px !important;
+}
+
+.Detail .column{
+  width: 8% !important;
+  text-align: center;
+}
+.detailButton{
+  background-color: #1A3C7E !important;
+  color:white !important;
+  float: right;
+  font-size: 14px !important;
+
+}
