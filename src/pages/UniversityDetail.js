@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Table,  Grid, Icon, Button, Modal, Form} from 'semantic-ui-react';
+import { Button, Modal, Form} from 'semantic-ui-react';
 import UniversityDetailInfo from '../component/UniversityDetailInfo';
 import UniversityDetailStudents from '../component/UniversityDetailStudents';
+import { connect } from 'react-redux';
+import {fetchUniversityDetail} from '../actions/University';
 
 
 const options = [
@@ -9,19 +11,28 @@ const options = [
     { key: '2', text: 'Celal Bayar Üniversitesi', value: '2' },
     { key: '3', text: 'Kocaeli Üniversitesi', value: '3' },
   ]
-class Students extends Component {
- 
+class UniversityDetail extends Component {
+    state={
+        University:[]
+    }
+    componentWillReceiveProps(nextState){
+        nextState.University.universities &&  nextState.University.universities.then((data)=>{
+            this.setState({University:data})
+        })
+    }
+    componentDidMount(){
+        this.props.fetchUniversityDetail(this.props.location.state)
+    }
     render() {
-        console.log(this.props.location.state)
         return(
             
             <div className="fullGray">
                  <div className="titleBox">
-                    <span className="title">Karabük Üniversitesi </span> <span>Karabük</span>
+                    <span className="title">{this.state.University.name} </span> <span>{this.state.University.city}</span>
                     <Button style={{float:'right'}} className="detailButton">Öğrenci Ekle</Button>
                 </div> 
-                 <UniversityDetailInfo />
-                <UniversityDetailStudents />
+                 <UniversityDetailInfo university={this.state.University} />
+                <UniversityDetailStudents students={this.state.University.students} />
                 <Modal size="tiny" open={false}>
                     <Modal.Header>Öğrenci Ekle</Modal.Header>
                     <Modal.Content>
@@ -49,4 +60,12 @@ class Students extends Component {
     }
 } 
 
-export default Students;
+const mapStateToProps=({University})=>{
+    return {University}
+}
+
+const mapDispatchToProps={
+    fetchUniversityDetail
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(UniversityDetail);

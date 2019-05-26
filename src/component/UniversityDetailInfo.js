@@ -23,16 +23,16 @@ class UniversityDetailInfo extends Component {
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column  >
-                        1
+                        {this.props.university.id}
                     </Grid.Column>
                     <Grid.Column   >
-                        2000-01-01
+                        {this.props.university.founded_at}                        
                     </Grid.Column>
                     <Grid.Column  >
-                        Devlet
+                        {this.props.university.type}  
                     </Grid.Column>
                     <Grid.Column  >
-                        <a>Ziyaret Et <Icon name="arrow right" /></a>
+                        <a href={this.props.university.web_page}>Ziyaret Et <Icon name="arrow right" /></a>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

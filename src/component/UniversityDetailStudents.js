@@ -14,41 +14,18 @@ class UniversityDetailStudents extends Component {
                 </Table.Header>
 
                 <Table.Body>
+                {this.props.students ? this.props.students.map(item => (
+
                     <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
+                        <Table.Cell>{item.id}</Table.Cell>
+                        <Table.Cell>{item.name}</Table.Cell>
+                        <Table.Cell>{item.started_at}</Table.Cell>
                     </Table.Row>
-                    <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
-                    </Table.Row> 
-                    <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
-                    </Table.Row>
-                    <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
-                    </Table.Row>
-                    <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
-                    </Table.Row>
-                    <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
-                    </Table.Row>
-                    <Table.Row >
-                        <Table.Cell>1</Table.Cell>
-                        <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                        <Table.Cell>2019-05-25</Table.Cell>
-                    </Table.Row>
+                )):
+                <Table.Row >
+                    <Table.Cell  collapsing={3}>Görüntülenecek hiç öğrenci yok !</Table.Cell>
+                </Table.Row>}
+                   
                 </Table.Body>
             </Table>
         );
