@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Table,  Grid, Icon, Button, Modal, Form} from 'semantic-ui-react';
 import UniversityDetailInfo from '../component/UniversityDetailInfo';
+import UniversityDetailStudents from '../component/UniversityDetailStudents';
+
 
 const options = [
     { key: '1', text: 'Karabük Üniversitesi', value: '1' },
@@ -19,51 +21,7 @@ class Students extends Component {
                     <Button style={{float:'right'}} className="detailButton">Öğrenci Ekle</Button>
                 </div> 
                  <UniversityDetailInfo />
-                 <Table basic celled style={{backgroundColor:'white'}} >
-                    <Table.Header >
-                        <Table.HeaderCell style={{width:'5%'}}>ID</Table.HeaderCell>
-                        <Table.HeaderCell style={{width:'50%'}}>Öğrenci Adı</Table.HeaderCell>
-                        <Table.HeaderCell style={{width:'45%'}}>Başlama Tarihi</Table.HeaderCell>
-                    </Table.Header>
-
-                    <Table.Body>
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row>
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row> 
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row>
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row>
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row>
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row>
-                        <Table.Row >
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>Muhammed Dilmaç</Table.Cell>
-                            <Table.Cell>2019-05-25</Table.Cell>
-                        </Table.Row>
-                    </Table.Body>
-                </Table>
+                <UniversityDetailStudents />
                 <Modal size="tiny" open={false}>
                     <Modal.Header>Öğrenci Ekle</Modal.Header>
                     <Modal.Content>
