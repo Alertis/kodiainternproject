@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table,  Grid, Icon, Button, Modal, Form} from 'semantic-ui-react';
+import UniversityDetailInfo from '../component/UniversityDetailInfo';
 
 const options = [
     { key: '1', text: 'Karabük Üniversitesi', value: '1' },
@@ -9,6 +10,7 @@ const options = [
 class Students extends Component {
  
     render() {
+        console.log(this.props.location.state)
         return(
             
             <div className="fullGray">
@@ -16,36 +18,7 @@ class Students extends Component {
                     <span className="title">Karabük Üniversitesi </span> <span>Karabük</span>
                     <Button style={{float:'right'}} className="detailButton">Öğrenci Ekle</Button>
                 </div> 
-                 <Grid className="Detail" padded style={{backgroundColor:'white',marginTop:'20%'}}>
-                    <Grid.Row className="DetailTitle" style={{width:'auto'}}> 
-                        <Grid.Column  >
-                            ID
-                        </Grid.Column>
-                        <Grid.Column  >
-                            Kuruluş Tarihi
-                        </Grid.Column>
-                        <Grid.Column  >
-                            Türü
-                        </Grid.Column>
-                        <Grid.Column  >
-                            Web Sitesi
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column  >
-                            1
-                        </Grid.Column>
-                        <Grid.Column   >
-                            2000-01-01
-                        </Grid.Column>
-                        <Grid.Column  >
-                            Devlet
-                        </Grid.Column>
-                        <Grid.Column  >
-                            <a>Ziyaret Et <Icon name="arrow right" /></a>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
+                 <UniversityDetailInfo />
                  <Table basic celled style={{backgroundColor:'white'}} >
                     <Table.Header >
                         <Table.HeaderCell style={{width:'5%'}}>ID</Table.HeaderCell>
@@ -91,7 +64,7 @@ class Students extends Component {
                         </Table.Row>
                     </Table.Body>
                 </Table>
-                <Modal size="tiny" open={true}>
+                <Modal size="tiny" open={false}>
                     <Modal.Header>Öğrenci Ekle</Modal.Header>
                     <Modal.Content>
                         <Form>

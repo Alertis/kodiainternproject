@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Table } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
 
 class Universities extends Component {
 
     
     render() {
-        console.log(this.props.universities)
         return(
             <Table basic celled style={{backgroundColor:'white', textAlign:'center'}} >
                 <Table.Header >
@@ -19,7 +19,7 @@ class Universities extends Component {
                         <Table.Row >
                             <Table.Cell>{item.id}</Table.Cell>
                             <Table.Cell>{item.name}</Table.Cell>
-                            <Table.Cell><a>tıklayın..</a></Table.Cell>
+                            <Table.Cell><Link to={{pathname:'UniversityDetail', state:{id:item.id}}}>tıklayın..</Link></Table.Cell>
                         </Table.Row>
                     )):
                     <Table.Row >
