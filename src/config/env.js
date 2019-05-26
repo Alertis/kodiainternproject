@@ -1,0 +1,1 @@
+export const API_BASE="https://virtserver.swaggerhub.com/MuhammetDilmac/Intern/1.0.0";

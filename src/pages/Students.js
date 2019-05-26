@@ -54,7 +54,7 @@ class Students extends Component {
                         </Table.Row>
                     </Table.Body>
                 </Table>
-                <Modal size="mini" open={true}>
+                <Modal size="mini" open={false}>
                     <Modal.Header>Muhammed Dilmaç</Modal.Header>
                     <Modal.Content>
                        <span>ID: </span> 1 <br />

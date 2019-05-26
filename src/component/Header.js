@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Grid, Container} from 'semantic-ui-react';
+import { Menu} from 'semantic-ui-react';
 
 
 
