@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 import Main from './pages/Main';
-import Students from './pages/Students';
+import Students from './pages/Student';
 import University from './pages/University';
 import UniversityDetail from './pages/UniversityDetail';
 import HeaderComp from './component/Header'
