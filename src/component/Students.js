@@ -6,7 +6,6 @@ class Students extends Component {
 
     
     render() {
-        console.log(this.props.students)
         return(
             <Table basic celled selectable style={{backgroundColor:'white', textAlign:'center'}}  >
             <Table.Header >

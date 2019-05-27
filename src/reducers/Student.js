@@ -13,7 +13,7 @@ export default (state=initialState, {type,payload}) => {
                 ...state,
                 student:payload
             };
-            case FETCH_STUDENT_DETAIL:
+        case FETCH_STUDENT_DETAIL:
             return{
                 ...state,
                 studentDetail:payload

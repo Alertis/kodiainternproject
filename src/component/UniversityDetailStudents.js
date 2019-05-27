@@ -6,7 +6,7 @@ class UniversityDetailStudents extends Component {
     
     render() {
         return(
-            <Table basic celled style={{backgroundColor:'white'}} >
+            <Table basic celled selectable style={{backgroundColor:'white'}} >
                 <Table.Header >
                     <Table.HeaderCell style={{width:'5%'}}>ID</Table.HeaderCell>
                     <Table.HeaderCell style={{width:'50%'}}>Öğrenci Adı</Table.HeaderCell>
@@ -16,7 +16,7 @@ class UniversityDetailStudents extends Component {
                 <Table.Body>
                 {this.props.students ? this.props.students.map(item => (
 
-                    <Table.Row >
+                    <Table.Row onClick={()=>this.props.fetch(item.id)}>
                         <Table.Cell>{item.id}</Table.Cell>
                         <Table.Cell>{item.name}</Table.Cell>
                         <Table.Cell>{item.started_at}</Table.Cell>

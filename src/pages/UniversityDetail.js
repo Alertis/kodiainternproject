@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { Button, Modal, Form} from 'semantic-ui-react';
 import UniversityDetailInfo from '../component/UniversityDetailInfo';
 import UniversityDetailStudents from '../component/UniversityDetailStudents';
+import ModalStudentDetail from '../component/ModalStudentDetail'
+
 import { connect } from 'react-redux';
-import {fetchUniversityDetail} from '../actions/University';
+import {fetchUniversityDetail, fetchStudentDetail} from '../actions/University';
+
 
 
 const options = [
@@ -13,15 +16,27 @@ const options = [
   ]
 class UniversityDetail extends Component {
     state={
-        University:[]
+        University:[],
+        modalOpenStudent:false,
+        studentDetail:[]
     }
     componentWillReceiveProps(nextState){
         nextState.University.universities &&  nextState.University.universities.then((data)=>{
             this.setState({University:data})
-        })
+        });
+        nextState.University.studentDetail.length !== 0 &&  nextState.University.studentDetail.then((data)=>{
+            this.setState({studentDetail:data})
+        });
     }
     componentDidMount(){
         this.props.fetchUniversityDetail(this.props.location.state)
+    }
+    modalClick = () => {
+        this.setState({modalOpenStudent:!this.state.modalOpenStudent})
+    }
+    fetchStudentDetail = (id) => {
+        this.props.fetchStudentDetail(id);
+        this.modalClick();
     }
     render() {
         return(
@@ -32,7 +47,9 @@ class UniversityDetail extends Component {
                     <Button style={{float:'right'}} className="detailButton">Öğrenci Ekle</Button>
                 </div> 
                  <UniversityDetailInfo university={this.state.University} />
-                <UniversityDetailStudents students={this.state.University.students} />
+                <UniversityDetailStudents students={this.state.University.students} fetch={this.fetchStudentDetail} />
+                <ModalStudentDetail open={this.state.modalOpenStudent} onClose={this.modalClick} detail={this.state.studentDetail} />
+
                 <Modal size="tiny" open={false}>
                     <Modal.Header>Öğrenci Ekle</Modal.Header>
                     <Modal.Content>
@@ -65,7 +82,7 @@ const mapStateToProps=({University})=>{
 }
 
 const mapDispatchToProps={
-    fetchUniversityDetail
+    fetchUniversityDetail, fetchStudentDetail
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(UniversityDetail);
