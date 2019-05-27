@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Universities from '../component/Universities';
 import { connect } from 'react-redux';
 import {fetchUniversity} from '../actions/University';
+import HeaderComp from '../component/Header'
 
 class University extends Component {
     state={
@@ -17,10 +18,14 @@ class University extends Component {
     }
     render() {
         return(
-            <div className="fullGray">
-                 <span className="title">Üniversite Listesi</span>
-                 <Universities universities={this.state.University} />
-            </div>        
+            <div>
+                <HeaderComp />
+                <div className="fullGray">
+                    <span className="title">Üniversite Listesi</span>
+                    <Universities universities={this.state.University} />
+                </div>   
+            </div>
+                 
         );
     }
 } 

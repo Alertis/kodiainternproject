@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Form} from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import UniversityDetailInfo from '../component/UniversityDetailInfo';
 import UniversityDetailStudents from '../component/UniversityDetailStudents';
 import ModalStudentDetail from '../component/ModalStudentDetail';
@@ -7,7 +7,8 @@ import ModalAddStudent from '../component/ModalAddStudent';
 
 import { connect } from 'react-redux';
 import {fetchUniversityDetail, fetchStudentDetail} from '../actions/University';
-
+import HeaderComp from '../component/Header'
+ 
 class UniversityDetail extends Component {
     state={
         University:[],
@@ -38,18 +39,21 @@ class UniversityDetail extends Component {
     }
     render() {
         return(
-            
-            <div className="fullGray">
-                 <div className="titleBox">
-                    <span className="title">{this.state.University.name} </span> <span>{this.state.University.city}</span>
-                    <Button style={{float:'right'}} className="detailButton" onClick={this.modalAddStudentClick}>Öğrenci Ekle</Button>
+            <div>
+                <HeaderComp />
+                <div className="fullGray">
+                    <div className="titleBox">
+                        <span className="title">{this.state.University.name} </span> <span>{this.state.University.city}</span>
+                        <Button style={{float:'right'}} className="detailButton" onClick={this.modalAddStudentClick}>Öğrenci Ekle</Button>
+                    </div> 
+                    <UniversityDetailInfo university={this.state.University} />
+                    <UniversityDetailStudents students={this.state.University.students} fetch={this.fetchStudentDetail} />
+                    <ModalStudentDetail open={this.state.modalOpenStudent} onClose={this.modalClick} detail={this.state.studentDetail} />
+                    <ModalAddStudent open={this.state.modalOpenAddStudent} onClose={this.modalAddStudentClick} />
+                    
                 </div> 
-                 <UniversityDetailInfo university={this.state.University} />
-                <UniversityDetailStudents students={this.state.University.students} fetch={this.fetchStudentDetail} />
-                <ModalStudentDetail open={this.state.modalOpenStudent} onClose={this.modalClick} detail={this.state.studentDetail} />
-                <ModalAddStudent open={this.state.modalOpenAddStudent} onClose={this.modalAddStudentClick} />
+            </div>
                 
-            </div>        
         );
     }
 } 

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Students from '../component/Students'
 import { connect } from 'react-redux';
 import {fetchStudents, fetchStudentDetail} from '../actions/Student';
-import ModalStudentDetail from '../component/ModalStudentDetail'
+import ModalStudentDetail from '../component/ModalStudentDetail';
+import HeaderComp from '../component/Header'
+
 class Student extends Component {
     state={
         Students:[],
@@ -30,13 +32,17 @@ class Student extends Component {
     }
     render() {
         return(
-            
-            <div className="fullGray">
+            <div>
+                <HeaderComp />            
+
+                <div className="fullGray">
                  <span className="title">Öğrenci Listesi</span>
                 <Students students={this.state.Students}  fetch={this.fetchDetail} />
                 <ModalStudentDetail open={this.state.modalOpen} onClose={this.modalClick} detail={this.state.studentDetail} />
                 
-            </div>        
+            </div>  
+            </div>
+                  
         );
     }
 } 

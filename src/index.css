@@ -17,6 +17,7 @@ code {
 
 .container{
   width: 80% !important;
+  margin-top: 10%;
 } 
 
 .menu {
@@ -28,7 +29,7 @@ code {
 
 .headerMenu{
   position: absolute;
-
+  top:0;
   width: 100%;
   
   z-index: 10;
