@@ -14,9 +14,6 @@ code {
     monospace;
 }
 
-tr:hover{
-  background: #FAFAFB !important;
-}
 
 .container{
   width: 80% !important;

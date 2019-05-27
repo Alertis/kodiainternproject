@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import { Table,  Modal, Container} from 'semantic-ui-react';
 import Students from '../component/Students'
 import { connect } from 'react-redux';
-import {fetchStudents} from '../actions/Student';
-
+import {fetchStudents, fetchStudentDetail} from '../actions/Student';
+import ModalStudentDetail from '../component/ModalStudentDetail'
 class Student extends Component {
     state={
-        Students:[]
+        Students:[],
+        studentDetail:[],
+        modalOpen:false
+    }
+    modalClick = () => {
+        this.setState({modalOpen:!this.state.modalOpen})
+    }
+    fetchDetail = (id) => {
+        this.props.fetchStudentDetail(id);
+        this.modalClick();
     }
     componentDidMount(){
         this.props.fetchStudents();
@@ -14,26 +22,20 @@ class Student extends Component {
     componentWillReceiveProps(nextState){
         nextState.Student.student &&  nextState.Student.student.then((data)=>{
             this.setState({Students:data})
-        })
+        });
+
+        nextState.Student.studentDetail.length !== 0 &&  nextState.Student.studentDetail.then((data)=>{
+            this.setState({studentDetail:data})
+        });
     }
     render() {
         return(
             
             <div className="fullGray">
                  <span className="title">Öğrenci Listesi</span>
-                <Students students={this.state.Students}/>
-                <Modal size="mini" open={false}>
-                    <Modal.Header>Muhammed Dilmaç</Modal.Header>
-                    <Modal.Content>
-                       <span>ID: </span> 1 <br />
-                       <span>Üniversite Adı: </span> Karabük Üniversitesi <br />
-                       <span>Başlangıç Tarihi: </span> 2012-01-01 <br />
-                       <span>Kuruluş Tarihi: </span> 2000-01-01 <br />
-                       <span>Türü: </span> Devlet <br />
-
-                    </Modal.Content>
-                    
-                </Modal>
+                <Students students={this.state.Students}  fetch={this.fetchDetail} />
+                <ModalStudentDetail open={this.state.modalOpen} onClose={this.modalClick} detail={this.state.studentDetail} />
+                
             </div>        
         );
     }
@@ -44,7 +46,7 @@ const mapStateToProps=({Student})=>{
 }
 
 const mapDispatchToProps={
-    fetchStudents
+    fetchStudents, fetchStudentDetail
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Student);

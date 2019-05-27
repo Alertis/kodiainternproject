@@ -1,7 +1,8 @@
 import {FETCH_STUDENTS, FETCH_STUDENT_DETAIL} from '../actions/Student';
 
 const initialState={
-    student:[]
+    student:[],
+    studentDetail:[]
 }
 
 export default (state=initialState, {type,payload}) => {
@@ -15,7 +16,7 @@ export default (state=initialState, {type,payload}) => {
             case FETCH_STUDENT_DETAIL:
             return{
                 ...state,
-                student:payload
+                studentDetail:payload
             };
         default:
             return state;     
