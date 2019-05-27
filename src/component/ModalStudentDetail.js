@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Modal } from 'semantic-ui-react';
-import { Link } from 'react-router-dom'
 
 class ModalStudentDetail extends Component {
 
