@@ -4,6 +4,7 @@ import UniversityDetailInfo from '../component/UniversityDetailInfo';
 import UniversityDetailStudents from '../component/UniversityDetailStudents';
 import ModalStudentDetail from '../component/ModalStudentDetail';
 import ModalAddStudent from '../component/ModalAddStudent';
+import ModalInfo from '../component/ModalInfo';
 
 import { connect } from 'react-redux';
 import {fetchUniversityDetail, fetchStudentDetail, fetchUniversity, saveStudent} from '../actions/University';
@@ -16,7 +17,8 @@ class UniversityDetail extends Component {
         modalOpenStudent:false,
         studentDetail:[],
         modalOpenAddStudent:false,
-        saveStudent:[]
+        saveStudent:[],
+        modalOpenInfo:false
     }
     componentWillReceiveProps(nextState){
         nextState.University.universityDetail &&  nextState.University.universityDetail.then((data)=>{
@@ -29,7 +31,8 @@ class UniversityDetail extends Component {
             this.setState({universities:data})
         });
         nextState.University.saveStudent.length !==0 &&  nextState.University.saveStudent.then((data)=>{
-            this.setState({saveStudent:data})
+            this.setState({saveStudent:data, modalOpenInfo:true, modalOpenAddStudent:false })
+
         });
     }
     componentDidMount(){
@@ -38,6 +41,9 @@ class UniversityDetail extends Component {
     }
     modalClick = () => {
         this.setState({modalOpenStudent:!this.state.modalOpenStudent})
+    }
+    modalInfoClick = () => {
+        this.setState({modalOpenInfo:!this.state.modalOpenInfo})
     }
     modalAddStudentClick = () => {
         this.setState({modalOpenAddStudent:!this.state.modalOpenAddStudent})
@@ -62,6 +68,7 @@ class UniversityDetail extends Component {
                     <UniversityDetailStudents students={this.state.UniversityDetail.students} fetch={this.fetchStudentDetail} />
                     <ModalStudentDetail open={this.state.modalOpenStudent} onClose={this.modalClick} detail={this.state.studentDetail} />
                     <ModalAddStudent open={this.state.modalOpenAddStudent} university={this.state.universities} onClose={this.modalAddStudentClick} save={this.saveStudent} />  
+                    <ModalInfo open={this.state.modalOpenInfo} onClose={this.modalInfoClick} data={this.state.saveStudent} />
                 </div> 
             </div>
                 
