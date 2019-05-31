@@ -18,7 +18,9 @@
   <h3 align="center">Kodiasoft Intern Project</h3>
 
   <p align="center">
-    Kodiasoft tarafından gönderilen frontend yaz staj projesidir. Detaylı proje dökümanı için <a href="https://gitlab.com/kodiasoft/intern/2019/wikis/FrontEnd"> tıklayınız </a>
+    Kodiasoft tarafından gönderilen frontend yaz staj projesidir. Detaylı proje dökümanı için <a href="https://gitlab.com/kodiasoft/intern/2019/wikis/FrontEnd"> tıklayınız </a> 
+    <br />
+    <a href="https://laughing-cori-7a6aa2.netlify.com/"> Demo için tıklayın.</a>
     <br />
     ·
     <a href="https://github.com/Alertis/kodiainternproject/issues">Bugları raporla</a>
