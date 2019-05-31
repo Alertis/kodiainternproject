@@ -6,26 +6,35 @@ import ModalStudentDetail from '../component/ModalStudentDetail';
 import ModalAddStudent from '../component/ModalAddStudent';
 
 import { connect } from 'react-redux';
-import {fetchUniversityDetail, fetchStudentDetail} from '../actions/University';
-import HeaderComp from '../component/Header'
+import {fetchUniversityDetail, fetchStudentDetail, fetchUniversity, saveStudent} from '../actions/University';
+import HeaderComp from '../component/Header';
  
 class UniversityDetail extends Component {
     state={
-        University:[],
+        UniversityDetail:[],
+        universities:[],
         modalOpenStudent:false,
         studentDetail:[],
-        modalOpenAddStudent:false
+        modalOpenAddStudent:false,
+        saveStudent:[]
     }
     componentWillReceiveProps(nextState){
-        nextState.University.universities &&  nextState.University.universities.then((data)=>{
-            this.setState({University:data})
+        nextState.University.universityDetail &&  nextState.University.universityDetail.then((data)=>{
+            this.setState({UniversityDetail:data})
         });
         nextState.University.studentDetail.length !== 0 &&  nextState.University.studentDetail.then((data)=>{
             this.setState({studentDetail:data})
         });
+        nextState.University.universities &&  nextState.University.universities.then((data)=>{
+            this.setState({universities:data})
+        });
+        nextState.University.saveStudent.length !==0 &&  nextState.University.saveStudent.then((data)=>{
+            this.setState({saveStudent:data})
+        });
     }
     componentDidMount(){
-        this.props.fetchUniversityDetail(this.props.location.state)
+        this.props.fetchUniversityDetail(this.props.location.state);
+        this.props.fetchUniversity();
     }
     modalClick = () => {
         this.setState({modalOpenStudent:!this.state.modalOpenStudent})
@@ -37,20 +46,22 @@ class UniversityDetail extends Component {
         this.props.fetchStudentDetail(id);
         this.modalClick();
     }
+    saveStudent = (name, started_at, university) => {
+        this.props.saveStudent(name, started_at, university)
+    }
     render() {
         return(
             <div>
                 <HeaderComp />
                 <div className="fullGray">
                     <div className="titleBox">
-                        <span className="title">{this.state.University.name} </span> <span>{this.state.University.city}</span>
+                        <span className="title">{this.state.UniversityDetail.name} </span> <span>{this.state.UniversityDetail.city}</span>
                         <Button style={{float:'right'}} className="detailButton" onClick={this.modalAddStudentClick}>Öğrenci Ekle</Button>
                     </div> 
-                    <UniversityDetailInfo university={this.state.University} />
-                    <UniversityDetailStudents students={this.state.University.students} fetch={this.fetchStudentDetail} />
+                    <UniversityDetailInfo university={this.state.UniversityDetail} />
+                    <UniversityDetailStudents students={this.state.UniversityDetail.students} fetch={this.fetchStudentDetail} />
                     <ModalStudentDetail open={this.state.modalOpenStudent} onClose={this.modalClick} detail={this.state.studentDetail} />
-                    <ModalAddStudent open={this.state.modalOpenAddStudent} onClose={this.modalAddStudentClick} />
-                    
+                    <ModalAddStudent open={this.state.modalOpenAddStudent} university={this.state.universities} onClose={this.modalAddStudentClick} save={this.saveStudent} />  
                 </div> 
             </div>
                 
@@ -63,7 +74,7 @@ const mapStateToProps=({University})=>{
 }
 
 const mapDispatchToProps={
-    fetchUniversityDetail, fetchStudentDetail
+    fetchUniversityDetail, fetchStudentDetail, fetchUniversity, saveStudent
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(UniversityDetail);
