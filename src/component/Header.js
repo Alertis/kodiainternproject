@@ -31,7 +31,7 @@ class HeaderComp extends Component {
         console.log(window.location.pathname)
         return(
         <Menu  pointing secondary className="headerMenu">
-            <img src='https://www.medicana.com.tr/assets/uploads/medicana-logo.png' width="150"/>
+            <img src='/Assets/logo.svg' width="150"/>
             <Menu.Menu position="right"  >
                 <Link to="/App"> <Menu.Item as="h3" name='Anasayfa' active={this.state.active === 'anasayfa' ? true : false} /> </Link>
                 <Link to="/University"> <Menu.Item as="h3" name='Üniversiteler' active={this.state.active === 'university' ? true : false}   /></Link>

@@ -13,6 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Route exact path="/" component={Main} ></Route>
         <Route exact path="/App" component={Main} ></Route>
         <Route exact path="/Students" component={Students}></Route>
         <Route exact path="/University" component={University}></Route>

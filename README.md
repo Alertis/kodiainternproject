@@ -1,68 +1,106 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT SHIELDS -->
+[![Build Status][build-shield]]()
+[![Contributors][contributors-shield]]()
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/Alertis/kodiainternproject">
+    <h3></h3>
+  </a>
 
-### `npm test`
+  <h3 align="center">Kodiasoft Intern Project</h3>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <p align="center">
+    Kodiasoft tarafından gönderilen frontend yaz staj projesidir. Detaylı proje dökümanı için <a href="https://gitlab.com/kodiasoft/intern/2019/wikis/FrontEnd"> tıklayınız </a>
+    <br />
+    ·
+    <a href="https://github.com/Alertis/kodiainternproject/issues">Bugları raporla</a>
+    ·
+    <a href="https://github.com/Alertis/kodiainternproject/issues">İstekte bulun</a>
+  </p>
+</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+<!-- TABLE OF CONTENTS -->
+## İçerik
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [Proje Hakkında](#proje-hakkında)
+  * [Kullanılan Paketler](#kullanılan-paketler)
+* [Başlangıç](#başlangıç)
+  * [Gereksinimler](#gereksinimler)
+  * [Kurulum](#kurulum)
+* [İletişim](#iletişim)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- ABOUT THE PROJECT -->
+## Proje Hakkında
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Uygulama içerisinde kayıt edilen üniversiteler, kayıt edilen üniversitelere ait öğrenciler, üniversite detayları, öğrenci detaylar ve öğrenci ekleme alanları bulunmaktadır. 
+"axios": "^0.18.0",
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Kullanılan Paketler
+Uygulama geliştirme sırasında aşağıdaki paketlerden yararlanılmıştır.
+* [React](https://reactjs.org/)
+* [React Redux](https://redux.js.org/basics/usage-with-react)
+* [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+* [Semantic UI](https://react.semantic-ui.com/)
+* [Moment](https://www.npmjs.com/package/moment)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- GETTING STARTED -->
+## Başlangıç
 
-### Code Splitting
+Projeyi kendi bilgisayarınıza kurmak için aşağıdaki adımları takip edebilirsiniz.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Gereksinimler
 
-### Analyzing the Bundle Size
+Projeyi çalıştırabilmek için aşağıdaki paketleri yüklemeniz gerekmekte
+* npm
+```sh
+npm install npm@latest -g
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Kurulum
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+1. Github reposunu klonlayın
+```sh
+git clone https://github.com/Alertis/kodiainternproject
+```
+2. NPM paketlerini kurun
+```sh
+npm install
+```
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- CONTACT -->
+## Iletişim
 
-### Deployment
+Osman Yavuz Demir - [@alertisx](https://twitter.com/Alertisx) - osmanyavuzdemir96@gmail.com
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Proje Linki: [https://github.com/Alertis/memorize](https://github.com/Alertis/memorize)
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/badge/contributors-1-orange.svg?style=flat-square
+[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[license-url]: https://choosealicense.com/licenses/mit
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/osmanyavuzdemir/
