@@ -90,7 +90,7 @@ npm install
 
 Osman Yavuz Demir - [@alertisx](https://twitter.com/Alertisx) - osmanyavuzdemir96@gmail.com
 
-Proje Linki: [https://github.com/Alertis/memorize](https://github.com/Alertis/memorize)
+Proje Linki: [https://github.com/Alertis/kodiainternproject](https://github.com/Alertis/kodiainternproject)
 
 
 
